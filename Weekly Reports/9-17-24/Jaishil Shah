@@ -1,7 +1,7 @@
 Project Status Report: 9/17/24
 Sub-System: Mobile Application/Bluetooth Interface
 
-This week, I am working on setting up VSCode with Swift and being able to confirm the functionality of the program. 
+This week, I am working on setting up a MacOS Virtual Machine to run Swift (XCode) and being able to confirm the functionality of the program. 
 Additionally, I looked at the subsystem project and determined that the mobile app is the most suitable for the subsystem I am implementing this semester.
 I started the Coursera course for learning Swift, and hope to start coding and working on early implementation this week. 
 Regarding group-level progress, we have completed the ConOps and are currently working on the Mid-Term Presentation, FSR, ICD, Execution, and Validation Plan.
