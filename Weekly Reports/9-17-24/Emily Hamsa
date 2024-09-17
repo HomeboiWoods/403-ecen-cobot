@@ -1,1 +1,9 @@
+Subsystem: Power and Battery Management
+
+My subsystem is the power and battery management, and for this, I will be designing the power management PCB and the battery charger PCB.So far this week, I worked on creating a load 
+list for the components in the system and chose a power IC.
+As a group, we have completed the ConOps report and adjusted some of the operating specs of our design to better suit our constraints.
+I am now trying to create a list of the rest of the components for the power management PCB, and once I know the motor, I will choose a battery. 
+My plan is to talk to Dr. Lusher or the TA about some questions I have for choosing the PCB components. I also plan to work with my group to work on the FSR, IDC, Execution and 
+Validation plans, and work on the presentation. 
 
