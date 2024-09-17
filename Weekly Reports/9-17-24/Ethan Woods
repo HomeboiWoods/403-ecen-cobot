@@ -6,10 +6,11 @@ Howdy,
 This week, I worked on the CONOPs Report and did research into what motors we will be using.
 I found that our operating range of motors will fall between 24V and 48V, leaning torwards 48V.
 The motor we choose will be one of three BLDC varieties (Standard, Frameless, or Standard).
-I am now in the process of narrowing down our operating range and selecting a motor to work for.
+I am now in the process of narrowing down our operating range (torque and power) and selecting a BLDC motor to work with.
 I will be making sure I have the nessessary applications for when I begin to start using my DRVB161 EVM.
 My personal plan is to have the motor selected with a complete outline of my subsystem by next Tuesday so I 
-can be ready for the beginning presentations.
+can be ready for the beginning presentations. I also plan to work with my group to work on the FSR, IDC, Execution and 
+Validation plans, and work on the presentation. 
 
 Best,
 Ethan Woods
