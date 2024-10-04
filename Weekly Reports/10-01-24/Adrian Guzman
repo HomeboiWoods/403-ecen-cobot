@@ -1,1 +1,9 @@
+Project Status Report: 10/1/24
+Sub-System: MCU/Processing
+
+This week the team worked to complete the FSR, ICD, Execution, Validation Plan, and revision to the Conops. We have aligned on what our project is going to be, looks like, and the scoope in which it will operate.
+
+For my individiaul subsystem, I have completed and submitted the Altium schematic introduction project. I have also demoed to the TA for confirmation.
+After communication with my sponsor I have located and loaded all required symbols and footprints into Altium. I have looked at design layouts from TI and thier EVM boards and will use it as inspiration
+as I begin designing my own PCB. 
 
