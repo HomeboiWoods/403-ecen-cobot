@@ -1,1 +1,14 @@
+Project Status Report: 10/7/24
+Sub-System: MCU/Processing
+
+
+After communicating with Dr. Lusher I have re-mapped what I need to accomplish for my specific subsystem. Being that my sponsor wants 15x motor drivers for 5x BLDC motors, Dr. Lusher suggested I prove the concept for only 1 motor. This requires that I configure 3x motor drivers
+in my Altium schematirc as it would be pointless to repeate the work for 15x motor drivers only for it to not work.
+
+Goal for Altium Schemaatic:
+
+1) Connect 3x motor drivers to MCU (Completed)
+      Three motor drivers connected with the GPIO pins of the MCU. Totals 6PWM signals 2x per motor driver, 1 for High 1 for Low.
+2) Connect ESP-32 with motor MCU 
+3) Micro-USB connection using UART
 
