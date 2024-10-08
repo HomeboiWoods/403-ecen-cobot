@@ -9,6 +9,7 @@ Goal for Altium Schemaatic:
 
 1) Connect 3x motor drivers to MCU (Completed)
       Three motor drivers connected with the GPIO pins of the MCU. Totals 6PWM signals 2x per motor driver, 1 for High 1 for Low.
-2) Connect ESP-32 with motor MCU 
+2) Connect ESP-32 with motor MCU (Completed)
+      ESP-32 is connected to MCU using UART, there is also an LED on a GPIO pin for testing.
 3) Micro-USB connection using UART
 
