@@ -1,1 +1,8 @@
+Project Status Report: 10/14/24
+Sub-System: MCU/Processing
+
+
+First Bi-Weekly presentation on Monday. Team updated on the progress being made overall. I presented my altium schematics for the MCU, ESP-32, Motor Driver, and power stage. After presentation I realized I was 
+digging myself a hole by implementing too many things. I took a step back and will focus on the MCU board with the goal of programming it to blink a light. I have been working on Altium all week and will go to blitz where
+I plan to finilize my design and order my PCB and parts.
 
