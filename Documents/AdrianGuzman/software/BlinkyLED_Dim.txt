@@ -1,0 +1,28 @@
+#include "F28x_Project.h"
+
+#define DEVICE_GPIO_PIN_LED1 34  // GPIO34 for LED
+
+void main(void)
+{
+    InitSysCtrl();
+    InitGpio();
+
+    EALLOW;
+    GpioCtrlRegs.GPBMUX1.bit.GPIO34 = 0;
+    GpioCtrlRegs.GPBDIR.bit.GPIO34 = 1;
+    EDIS;
+
+    int onTime = 500;  // Initial ON time in microseconds (1ms)
+    int offTime = 12000; // Initial OFF time in microseconds (9ms)
+
+    while (1)
+    {
+        // Turn on LED (HIGH)
+        GPIO_WritePin(DEVICE_GPIO_PIN_LED1, 0);
+        DELAY_US(onTime);
+
+        // Turn off LED (LOW)
+        GPIO_WritePin(DEVICE_GPIO_PIN_LED1, 1);
+        DELAY_US(offTime);
+    }
+}

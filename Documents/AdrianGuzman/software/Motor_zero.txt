@@ -1,0 +1,31 @@
+#include "F28x_Project.h"
+
+void delay_us(uint32_t us);
+
+void main(void) {
+    InitSysCtrl();   // Initialize system control
+    InitGpio();      // Initialize GPIO
+
+    EALLOW;
+    GpioCtrlRegs.GPAMUX1.bit.GPIO10 = 0;  // Set GPIO10 as GPIO
+    GpioCtrlRegs.GPADIR.bit.GPIO10 = 1;   // Set GPIO10 as output
+    EDIS;
+
+    while (1) {
+        // Simulate 1ms HIGH pulse (0 degrees)
+        GpioDataRegs.GPASET.bit.GPIO10 = 1;  // Set GPIO10 HIGH
+        delay_us(1000);                      // Delay 1ms
+
+        // Simulate 19ms LOW pulse
+        GpioDataRegs.GPACLEAR.bit.GPIO10 = 1;  // Set GPIO10 LOW
+        delay_us(19000);                      // Delay 19ms
+
+        // Repeat to see if servo responds to software PWM
+    }
+}
+
+void delay_us(uint32_t us) {
+    while (us--) {
+        DELAY_US(1);  // 1 microsecond delay
+    }
+}

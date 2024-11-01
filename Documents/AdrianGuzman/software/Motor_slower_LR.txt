@@ -1,0 +1,39 @@
+#include "F28x_Project.h"  // Device support header
+
+int i;  // Declare loop variable
+
+void main(void) {
+    InitSysCtrl();   // Initialize system control
+    InitGpio();      // Initialize GPIO
+
+    EALLOW;
+    GpioCtrlRegs.GPAMUX1.bit.GPIO10 = 0;  // Set GPIO10 as GPIO
+    GpioCtrlRegs.GPADIR.bit.GPIO10 = 1;   // Set GPIO10 as output
+    EDIS;
+
+    while (1) {
+        // Rotate from 0° (1ms) to 180° (2ms) over 8 seconds
+        for (i = 0; i <= 100; i++) {
+            int pulse_width = 1000 + (i * 10);  // Range: 1ms to 2ms
+            GpioDataRegs.GPASET.bit.GPIO10 = 1;
+            DELAY_US(pulse_width);  // Pulse HIGH
+            GpioDataRegs.GPACLEAR.bit.GPIO10 = 1;
+            DELAY_US(20000 - pulse_width);  // Complete 20ms period
+            DELAY_US(80000);  // Slow down for 8-second movement
+        }
+
+        DELAY_US(2000000);  // 2-second pause
+
+        // Rotate back from 180° to 0° over 8 seconds
+        for (i = 100; i >= 0; i--) {
+            int pulse_width = 1000 + (i * 10);  // Range: 2ms to 1ms
+            GpioDataRegs.GPASET.bit.GPIO10 = 1;
+            DELAY_US(pulse_width);  // Pulse HIGH
+            GpioDataRegs.GPACLEAR.bit.GPIO10 = 1;
+            DELAY_US(20000 - pulse_width);  // Complete 20ms period
+            DELAY_US(80000);  // Slow down for 8-second movement
+        }
+
+        DELAY_US(2000000);  // 2-second pause
+    }
+}

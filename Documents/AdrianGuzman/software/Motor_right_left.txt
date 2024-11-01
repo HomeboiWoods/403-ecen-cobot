@@ -1,0 +1,43 @@
+#include "F28x_Project.h"  // Device support header
+
+void delay_us(uint32_t us);  // Microsecond delay function
+
+int i;  // Declare the loop variable globally or at the top of main()
+
+void main(void) {
+    InitSysCtrl();   // Initialize system control
+    InitGpio();      // Initialize GPIO
+
+    EALLOW;
+    GpioCtrlRegs.GPAMUX1.bit.GPIO10 = 0;  // Set GPIO10 as GPIO
+    GpioCtrlRegs.GPADIR.bit.GPIO10 = 1;   // Set GPIO10 as output
+    EDIS;
+
+    while (1) {
+        // Rotate clockwise for 2 seconds
+        for (i = 0; i < 50; i++) {  
+            GpioDataRegs.GPASET.bit.GPIO10 = 1;  // Set GPIO10 HIGH
+            delay_us(1700);  // 1.7ms pulse
+            GpioDataRegs.GPACLEAR.bit.GPIO10 = 1;  // Set GPIO10 LOW
+            delay_us(18300);  // Complete 20ms period
+        }
+
+        delay_us(2000000);  // 2-second pause
+
+        // Rotate counter-clockwise for 2 seconds
+        for (i = 0; i < 50; i++) {
+            GpioDataRegs.GPASET.bit.GPIO10 = 1;  // Set GPIO10 HIGH
+            delay_us(1300);  // 1.3ms pulse
+            GpioDataRegs.GPACLEAR.bit.GPIO10 = 1;  // Set GPIO10 LOW
+            delay_us(18700);  // Complete 20ms period
+        }
+
+        delay_us(2000000);  // 2-second pause
+    }
+}
+
+void delay_us(uint32_t us) {
+    while (us--) {
+        DELAY_US(1);  // 1 microsecond delay
+    }
+}
