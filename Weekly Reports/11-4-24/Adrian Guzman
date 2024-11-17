@@ -1,3 +1,6 @@
 Project Status Report: 11/17/24 (Writing on 11/17, but for 11/4 week)
 Sub-System: MCU/Processing
 
+I began to solder my board this week, and finished it by friday. After this I tested the voltage and ensured all the pins were getting the required signals. The board turned on after input and 
+held a steady 3.3v after the current on power supply was set to 500mA. Originally, I had set the supply to 61mA and did not have enough power to the board. Furthermore, the LED's for 3.3v turned on
+and the LED for GPIO pins turned on when I probed them. This confirms that traces are connected properly. The next step is to get the XDS110 debugger to connect so I can program my board.
