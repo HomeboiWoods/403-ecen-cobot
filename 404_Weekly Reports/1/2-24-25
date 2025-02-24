@@ -1,0 +1,6 @@
+Emily Hamsa
+Power Supply Subsystem
+
+Last week, I continued to validate my board and had success with it outputing the correct voltage. We also had our weekly presentation which I spent some time working on and preparing for.
+This coming week, I plan to continue work on the physical design. We still need to adhere the two sides together, drill screw holes, and attach everything.
+I also plan to complete validation of my subsystem. I need to test with an E-load to ensure that the board is able to handle the load that the cobot requires. 
