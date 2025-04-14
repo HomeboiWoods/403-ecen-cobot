@@ -1,0 +1,13 @@
+﻿Part,Manufacturer,Part Number,Quantity,Price ($),Footprint (mm²),Description
+Cac,Samsung Electro-Mechanics,CL21C910JBANNNC,1,0.1,6.75,Cap: 91 pF  Total Derated Cap: 91 pF  VDC: 50 V  ESR: 0 Ω  Package: 0805  
+Rr,Yageo,RC1206FR-07432KL,1,0.01,10.92,Resistance: 432 kΩ  Tolerance: 1.0%  Power: 250 mW  
+Cr,MuRata,GRM3195C2A332JA01D,1,0.12,10.92,Cap: 3.3 nF  Total Derated Cap: 3.3 nF  VDC: 100 V  ESR: 5 mΩ  Package: 1206  
+Ron,Vishay-Dale,CRCW120649K9FKEA,1,0.01,10.92,Resistance: 49.9 kΩ  Tolerance: 1.0%  Power: 250 mW  
+U1,Texas Instruments,LM5012DDAR,1,1.08,55.2,
+Cout,MuRata,GRM32ER61E226KE15L,2,0.23,14.7,Cap: 22 µF  Total Derated Cap: 33 µF  VDC: 25 V  ESR: 2 mΩ  Package: 1210  
+L1,Coilcraft,MSS1210-473MEB,1,0.81,204.49,L: 47 µH  DCR: 48 mΩ  IDC: 3 A  
+D1,Comchip Technology,CDBC580-G,1,0.26,83.27,Type: Schottky  VRRM: 80 V  Io: 5 A  
+Cin,TDK,C3225X7R2A225K230AB,2,0.21,14.7,Cap: 2.2 µF  Total Derated Cap: 1.9 µF  VDC: 100 V  ESR: 1.73 mΩ  Package: 1210_250  
+Rfbt,Vishay-Dale,CRCW0805200KFKEA,1,0.01,6.75,Resistance: 200 kΩ  Tolerance: 1.0%  Power: 125 mW  
+Rfbb,Yageo,RC1206FR-0749K9L,1,0.01,10.92,Resistance: 49.9 kΩ  Tolerance: 1.0%  Power: 250 mW  
+Cbst,Kemet,C1206C222K5RACTU,1,0.02,10.92,Cap: 2.2 nF  Total Derated Cap: 2.2 nF  VDC: 50 V  ESR: 410 mΩ  Package: 1206  

@@ -1,0 +1,8 @@
+Project Status Report: 10/07/24
+Sub-System: Mobile Application/Bluetooth Interface
+
+This week, I have worked on the Bluetooth connectivity on the Flutterflow side, and have started work on the ESP-32 Arduino IDE setup.
+By next week, I would like to be able to connect my phone to the ESP-32 through bluetooth. Once the connect is stable, I would like to setup 
+a functional button that toggles a LED on/off. Once that is completed, I will create a PCB that replicated the functionality of the breadboard config.
+with the ESP-32. There is a midterm presentation coming up, so I will be making sure I am up-to-date on all deliverables and that I have all my
+work organized.

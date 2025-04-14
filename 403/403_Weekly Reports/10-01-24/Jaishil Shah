@@ -1,0 +1,13 @@
+Project Status Report: 10/01/24
+Sub-System: Mobile Application/Bluetooth Interface
+
+
+This week, I completed my Subsystem Introduction Project and deployed the functional application on my iPhone. I have to 
+contact Apple support regarding making some slight changes to the app's publication. I recently submitted my app
+to the App Store Connect service, and I only have minor tweaks to make before the app appears on the App Store. I am continuing to
+implement my Subsystem on FlutterFlow, and am tinkering and learning how to properly develop the app for the requirements I need
+to properly connect and control the cobot. Currently, there are no group-level assignments to work on besides ordering parts, as all 
+documents have been completed and updated. The mobile application will be done in October, with the ESP-32 and PCB design
+following the completion of the app. Bluetooth connectivity will be completed within 2-3 weeks once work on that has begun, giving me
+a timeline of early to mid-November to complete the wireless connectivity. 
+

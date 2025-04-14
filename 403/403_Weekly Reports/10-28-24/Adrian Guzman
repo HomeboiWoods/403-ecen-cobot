@@ -1,0 +1,8 @@
+Project Status Report: 10/30/24
+Sub-System: MCU/Processing
+
+
+This week I have been further working on my C2000 software on the CCS IDE provided by TI. Last week I successfully blinked an LED. This week I successfully got a Servo 9G motor to move through the use
+of PWM signals. The servo motor takes in +5V, GND, and PWM. This PWM signal was generated from the GPIO10 pin from the EVM Launchpad. The GPIO10 pin can generate PWM signals. I am working to understand better
+the timing. I have a few different scripts, one for left to right slow motion, another for rest to the origin, and then one that shakes the motor back and forth rapidly. I will continue learning what else I can do
+for the remainder of this week. I have also ordered a practice solder kit that comes in Thursday (10/31) and I will go to the FEDC Friday (11/1) and practice for a few hours as I have never soldered before.

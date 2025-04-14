@@ -1,0 +1,23 @@
+Howdy,
+
+During this past week, the team has confirmed the scope of the project through a meeting with our TI Sponsor as well as the professor's input. We have decided to buy a robotic arm from Amazon and replace one of the motors with our 3-Phase BLDC Motor to show operation through Texas Instrument components. We also had our first progress presentation, but as we are so early in the semester, we did not have much to add besides what was accomplished since ECEN 403.
+
+As for individual work,
+
+Ethan W (Motor/Motor Driver Subsystem):
+For the past week, I have been working on the final board design for the Motor Drivers, which is almost complete. I planned to have it done today, but with the school closed today and Tuesday, I probably can’t order the boards until Wednesday. With school open again on Wednesday, I will place the order for my board and parts then. My next goal can be started once the boards come in from ordering, which is to solder it. Once soldered, I can finally begin integration with the rest of the group.
+
+Adrian G (MCU/ Processing Subsystem):
+In the past week, I have finished the schematic and layout of my new PCB. I also compiled the list of necessary parts to be ordered. Similarly to Ethan, when school opens up again I will send an email to tamu-ecen to place an order. The next goal is to solder the boards and then test last semester's software to ensure they function properly. After this, I can begin integrating with team members. In the meantime, I will review my own code, and TI's motor driver GUI code.
+
+Emily H (Power Management Subsystem):
+I have been working to redesign my power supply PCB to fit the new specifications of our adjusted scope. There are still some parts to complete, but I plan to order when the school opens along with Ethan and Adrian. While waiting for my parts to come in, I will be helping take the lead on the physical design with Jaishil. If my parts arrive by the next lab session, I will begin soldering and testing to prepare for integration.
+
+Jaishil S (User Interface & Wireless Subsystem / Physical Design Subsystem):
+I have been working on redesigning the mobile application for the cobot to ensure that it is capable of sending the proper signals that the motor drivers/MCU needs to translate into physical outputs. I have also ensured that the physical design has been ordered and have begun brainstorming how to implement the physical skeleton with our components. Once the robot comes in this week, I will begin restructuring it per our project’s requirements.
+
+This is our update for the week of 1/20/25, we hope to have boards in soon and begin soldering by next week. 
+
+
+Thank you for the check-in,
+Team 42.

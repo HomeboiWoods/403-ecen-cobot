@@ -1,0 +1,7 @@
+Project Status Report: 10/25/24
+Sub-System: MCU/Processing
+
+I finished my Altium schematic after working over blitz and meeting with sponsor to finalize design. We went over the entire board to ensure proper connections were being made and everything taken care of.
+After finalization, I generated the BOM and ordered the parts on digikey and mouser. The order was placed with tamu ecen email and is on the way. The gerber files for the PCB were also generated and the order was 
+placed on PCBway. After completion of board, I began working with the c2000 EVM. After a few hours I got the LED_blinky example code to run and displayed a blinking LED on the EVM board. I will continue to purse
+this until by PCB board ships to me. I plan to finalize some demo code that will be used for my subsystem demonstration.

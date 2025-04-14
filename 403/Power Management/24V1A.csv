@@ -1,0 +1,12 @@
+﻿Part,Manufacturer,Part Number,Quantity,Price ($),Footprint (mm²),Description
+Cout,MuRata,GRM31CR71H475KA12L,1,0.1,10.92,Cap: 4.7 µF  Total Derated Cap: 2.7 µF  VDC: 50 V  ESR: 3 mΩ  Package: 2220  
+Rfbt,Yageo,RC1206FR-07487KL,1,0.01,10.92,Resistance: 487 kΩ  Tolerance: 1.0%  Power: 250 mW  
+Rfbb,Yageo,RC1206FR-0725K5L,1,0.01,10.92,Resistance: 25.5 kΩ  Tolerance: 1.0%  Power: 250 mW  
+Cbst,MuRata,GRM3195C2A222JA01D,1,0.13,10.92,Cap: 2.2 nF  Total Derated Cap: 2.2 nF  VDC: 100 V  ESR: 1 mΩ  Package: 1206  
+U1,Texas Instruments,LM5164DDAR,1,1.413,55.2,
+Cin,TDK,C3225X7R2A225K230AB,1,0.21,14.7,Cap: 2.2 µF  Total Derated Cap: 930 nF  VDC: 100 V  ESR: 1.73 mΩ  Package: 1210_250  
+L1,Coilcraft,MSS1210-104KEB,1,0.81,204.49,L: 100 µH  DCR: 106 mΩ  IDC: 3.4 A  
+Cac,Samsung Electro-Mechanics,CL31C470JBCNNNC,1,0.02,10.92,Cap: 47 pF  Total Derated Cap: 47 pF  VDC: 50 V  ESR: 0 Ω  Package: 1206  
+Rr,Yageo,RC1206FR-07909KL,1,0.01,10.92,Resistance: 909 kΩ  Tolerance: 1.0%  Power: 250 mW  
+Cr,MuRata,GRM3195C2A222JA01D,1,0.13,10.92,Cap: 2.2 nF  Total Derated Cap: 2.2 nF  VDC: 100 V  ESR: 1 mΩ  Package: 1206  
+Ron,Vishay-Dale,CRCW1206200KFKEA,1,0.01,10.92,Resistance: 200 kΩ  Tolerance: 1.0%  Power: 250 mW  

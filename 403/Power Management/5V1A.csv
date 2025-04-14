@@ -1,0 +1,12 @@
+﻿Part,Manufacturer,Part Number,Quantity,Price ($),Footprint (mm²),Description
+L1,Bourns,SDR1307-330KL,1,0.51,226.5,L: 33 µH  DCR: 65 mΩ  IDC: 3.1 A  
+Cboot,MuRata,GRM219R71C104KA01D,1,0.02,6.75,Cap: 100 nF  Total Derated Cap: 100 nF  VDC: 16 V  ESR: 1 mΩ  Package: 0805  
+Cin,TDK,C3225X7S2A475M200AB,1,0.45,14.7,Cap: 4.7 µF  Total Derated Cap: 1.5 µF  VDC: 100 V  ESR: 5.89 mΩ  Package: 1210  
+Cvcc,MuRata,GRM21BR61E475MA12L,1,0.06,6.75,Cap: 4.7 µF  Total Derated Cap: 1.3 µF  VDC: 25 V  ESR: 2 mΩ  Package: 0805  
+U1,Texas Instruments,LMR36510FADDAR,1,0.749,55.2,
+Cinx,MuRata,GRM31MR72A224KA01L,1,0.09,10.92,Cap: 220 nF  Total Derated Cap: 130 nF  VDC: 100 V  ESR: 1 mΩ  Package: 1206  
+Cout,MuRata,GRM32ER61C476KE15L,2,0.17,14.7,Cap: 47 µF  Total Derated Cap: 63 µF  VDC: 16 V  ESR: 3.04 mΩ  Package: 1210  
+Rfbt,Vishay-Dale,CRCW0805100KFKEA,1,0.01,6.75,Resistance: 100 kΩ  Tolerance: 1.0%  Power: 125 mW  
+Rfbb,Vishay-Dale,CRCW080524K3FKEA,1,0.01,6.75,Resistance: 24.3 kΩ  Tolerance: 1.0%  Power: 125 mW  
+Rpg,Vishay-Dale,CRCW1206100KFKEA,1,0.01,10.92,Resistance: 100 kΩ  Tolerance: 1.0%  Power: 250 mW  
+Cff,AVX,12065A4R7CAT2A,1,0.07,10.92,Cap: 4.7 pF  Total Derated Cap: 4.7 pF  VDC: 50 V  ESR: 4.9 Ω  Package: 1206  

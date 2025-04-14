@@ -1,0 +1,14 @@
+﻿Part,Manufacturer,Part Number,Quantity,Price ($),Footprint (mm²),Description
+Rseries,Vishay-Dale,CRCW12061R00FKEA,1,0.01,10.92,Resistance: 1 Ω  Tolerance: 1.0%  Power: 250 mW  
+Cout,Kemet,C1206C475K4PACTU,1,0.07,10.92,Cap: 4.7 µF  Total Derated Cap: 2.3 µF  VDC: 16 V  ESR: 13 mΩ  Package: 1206  
+Cb,AVX,12105A103JAT2A,1,0.29,14.7,Cap: 10 nF  Total Derated Cap: 10 nF  VDC: 50 V  ESR: 0 Ω  Package: 1210  
+Cbyp,Kemet,C1206C105K3RACTU,1,0.05,10.92,Cap: 1 µF  Total Derated Cap: 670 nF  VDC: 25 V  ESR: 11 mΩ  Package: 1206  
+Rfbb,Vishay-Dale,CRCW12061K15FKEA,1,0.01,10.92,Resistance: 1.15 kΩ  Tolerance: 1.0%  Power: 250 mW  
+Ron,Yageo,RC1206FR-07220KL,1,0.01,10.92,Resistance: 220 kΩ  Tolerance: 1.0%  Power: 250 mW  
+L1,NIC Components,NPI54C331KTRF,1,0.09,60.75,L: 330 µH  DCR: 3 Ω  IDC: 220 mA  
+Ruv1,Vishay-Dale,CRCW12062K00FKEA,1,0.01,10.92,Resistance: 2 kΩ  Tolerance: 1.0%  Power: 250 mW  
+Cin,MuRata,GRM31CR72A105KA01L,1,0.11,10.92,Cap: 1 µF  Total Derated Cap: 490 nF  VDC: 100 V  ESR: 5.33 mΩ  Package: 1206  
+Rfbt,Vishay-Dale,CRCW120610K0FKEA,1,0.01,10.92,Resistance: 10 kΩ  Tolerance: 1.0%  Power: 250 mW  
+Ruv2,Vishay-Dale,CRCW120652K3FKEA,1,0.01,10.92,Resistance: 52.3 kΩ  Tolerance: 1.0%  Power: 250 mW  
+U1,Texas Instruments,LM5019MRX/NOPB,1,0.957,55.58,
+Cff,Kemet,C1206C182K5RACTU,1,0.09,10.92,Cap: 1.8 nF  Total Derated Cap: 1.8 nF  VDC: 50 V  ESR: 453 mΩ  Package: 1206  

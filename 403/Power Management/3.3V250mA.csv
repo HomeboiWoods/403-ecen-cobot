@@ -1,0 +1,9 @@
+﻿Part,Manufacturer,Part Number,Quantity,Price ($),Footprint (mm²),Description
+Rfbb,Yageo,RC0603FR-0710KL,1,0.01,4.68,Resistance: 10 kΩ  Tolerance: 1.0%  Power: 100 mW  
+Rfbt,Yageo,RC0603FR-0723K2L,1,0.01,4.68,Resistance: 23.2 kΩ  Tolerance: 1.0%  Power: 100 mW  
+Rpg,Vishay-Dale,CRCW0603100KFKEA,1,0.01,4.68,Resistance: 100 kΩ  Tolerance: 1.0%  Power: 100 mW  
+Cin,MuRata,GRM31CR72A105KA01L,3,0.11,10.92,Cap: 1 µF  Total Derated Cap: 1.5 µF  VDC: 100 V  ESR: 5.33 mΩ  Package: 1206  
+U1,Texas Instruments,TPSM365R6FRDNR,1,1.5,24.75,
+Cvcc,Kemet,C1206C105K3RACTU,1,0.05,10.92,Cap: 1 µF  Total Derated Cap: 960 nF  VDC: 25 V  ESR: 11 mΩ  Package: 1206  
+Cout,MuRata,GRM31CR71A226KE15L,1,0.12,10.92,Cap: 22 µF  Total Derated Cap: 18 µF  VDC: 10 V  ESR: 3.59 mΩ  Package: 1206  
+Cinx,MuRata,GRM319R72A104KA01D,1,0.09,10.92,Cap: 100 nF  Total Derated Cap: 61 nF  VDC: 100 V  ESR: 1 mΩ  Package: 1206  

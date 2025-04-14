@@ -1,0 +1,8 @@
+Project Status Report: 11/11/2024 (Writing on 11/17 but this is for the 11/11 week)
+Sub-System: MCU/Processing
+
+
+After soldering my board and spending time in lab trying to get XDS110 debug probe to connect in lab I fried my MCU chip. I realized this becuase the board instantly dropped voltage when the supply was connected.
+After discussion with Lusher, we replaced the IC and the problem was fixed. The rest of lab was spent trying to connect the debug probe to my MCU. After hours it did not work, and we then tried to use the launchpad
+as it contained the XDS110 debug probe on it. This was successful and after playing with it for a while we got an LED to blink on my MCU. The next step is to see if I can replicate the motor motion on my MCU as well.
+If I can get this to work, I will have what I want to show ready for demo.

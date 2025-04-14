@@ -1,6 +1,0 @@
-Subsystem: Power and Battery Management
-
-This week, I spent a lot of time on debugging. When connecting my board to a 10V, 0.5A power supply, it will pull 0.5A at only 0.9V, which is not what I would expect.
-I tested the voltage across all of the components to check their voltage, and some of them had a low voltage. I suspected they might be shorting, but when I removed one and 
-resoldered the component, I still recived the same result, so I am not sure if that is the problem or if I am properly testing.
-Next week, I want to talk with Dr. Lusher and my TA to see how I should further debug, as I am not sure about the process.
