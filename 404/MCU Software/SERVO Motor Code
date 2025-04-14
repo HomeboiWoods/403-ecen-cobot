@@ -1,0 +1,258 @@
+//SERVO MOTOR CODE
+/*
+ * C2000 MCU Code for Controlling Servo Motors 2, 3, 4 & 5 via ESP32 Inputs
+ *
+ * **Motor 2 (Base Arm Movement)**
+ * - Moves **UP (Extending, making it taller)** when GPIO33 receives LOW.
+ * - Moves **DOWN (Collapsing onto Arm 1)** when GPIO34 receives LOW.
+ * - Holds position when both are HIGH.
+ *
+ * **Motor 3 (Second Arm Joint)**
+ * - Moves **UP** when GPIO24 receives LOW.
+ * - Moves **DOWN** when GPIO31 receives LOW.
+ * - Holds position when both are HIGH.
+ *
+ * **Motor 4 (Gripper Rotation)**
+ * - Rotates **LEFT (Counterclockwise)** when GPIO12 receives LOW.
+ * - Rotates **RIGHT (Clockwise)** when GPIO27 receives LOW.
+ * - Holds position when both are HIGH.
+ *
+ * **Motor 5 (Gripper Open/Close)**
+ * - Opens **Gripper** when GPIO32 receives LOW.
+ * - Closes **Gripper** when GPIO14 receives LOW.
+ * - Holds position when both are HIGH.
+ *
+ * **GPIO Pins on C2000 MCU:**
+ * - GPIO33  Input from ESP32 to move Motor 2 UP
+ * - GPIO34  Input from ESP32 to move Motor 2 DOWN
+ * - GPIO0   PWM Output to Motor 2
+ * - GPIO24  Input from ESP32 to move Motor 3 UP
+ * - GPIO31  Input from ESP32 to move Motor 3 DOWN
+ * - GPIO1   PWM Output to Motor 3
+ * - GPIO12  Input from ESP32 to rotate Motor 4 LEFT (CCW)
+ * - GPIO27  Input from ESP32 to rotate Motor 4 RIGHT (CW)
+ * - GPIO6   PWM Output to Motor 4 (Gripper Rotation)
+ * - GPIO32  Input from ESP32 to open Motor 5 (Gripper Open)
+ * - GPIO14  Input from ESP32 to close Motor 5 (Gripper Close)
+ * - GPIO7   PWM Output to Motor 5 (Gripper Open/Close)
+ */
+
+#include "driverlib.h"
+#include "device.h"
+
+// **Motor 2 (Base Arm) Servo Timing**
+#define MOTOR2_DOWN_PULSE   2200
+#define MOTOR2_UP_PULSE     600
+#define MOTOR2_NEUTRAL      1250
+#define MOTOR2_STEP         30
+#define MOTOR2_PERIOD_US    20000
+
+// **Motor 3 (Second Arm Joint) Servo Timing**
+#define MOTOR3_MIN_PULSE   400
+#define MOTOR3_MAX_PULSE   2200
+#define MOTOR3_NEUTRAL     1250
+#define MOTOR3_STEP        15
+#define MOTOR3_PERIOD_US   20000
+
+// **Motor 4 (Gripper Rotation) Servo Timing**
+#define MOTOR4_LEFT_PULSE  2200
+#define MOTOR4_RIGHT_PULSE 600
+#define MOTOR4_NEUTRAL     1250
+#define MOTOR4_STEP        20
+#define MOTOR4_PERIOD_US   20000
+
+// **Motor 5 (Gripper Open/Close) Servo Timing**
+#define MOTOR5_OPEN_PULSE  2200
+#define MOTOR5_CLOSE_PULSE 600
+#define MOTOR5_NEUTRAL     1250
+#define MOTOR5_STEP        10
+#define MOTOR5_PERIOD_US   20000
+
+// **Pin Assignments**
+#define GPIO_UP_INPUT_M2    33
+#define GPIO_DOWN_INPUT_M2  34
+#define GPIO0_SERVO         0
+
+#define GPIO_UP_INPUT_M3    24
+#define GPIO_DOWN_INPUT_M3  31
+#define GPIO1_SERVO         1
+
+#define GPIO_LEFT_INPUT_M4  12
+#define GPIO_RIGHT_INPUT_M4 27
+#define GPIO6_SERVO         6
+
+#define GPIO_OPEN_INPUT_M5  32
+#define GPIO_CLOSE_INPUT_M5 14
+#define GPIO7_SERVO         7
+
+// **Current Positions**
+static uint16_t currentServoPos_M2 = MOTOR2_NEUTRAL;
+static uint16_t currentServoPos_M3 = MOTOR3_MAX_PULSE;
+static uint16_t currentServoPos_M4 = MOTOR4_NEUTRAL;
+static uint16_t currentServoPos_M5 = MOTOR5_NEUTRAL;
+
+// **Function Prototypes**
+void initGPIO(void);
+void moveServo(uint16_t pulseWidth, uint32_t gpio);
+void updateMotor2Position(void);
+void updateMotor3Position(void);
+void updateMotor4Position(void);
+void updateMotor5Position(void);
+void delay_us(uint32_t us);
+
+void main(void)
+{
+    Device_init();
+    Device_initGPIO();
+    initGPIO();
+
+    moveServo(currentServoPos_M2, GPIO0_SERVO);
+    moveServo(currentServoPos_M3, GPIO1_SERVO);
+    moveServo(currentServoPos_M4, GPIO6_SERVO);
+    moveServo(currentServoPos_M5, GPIO7_SERVO);
+
+    while (1)
+    {
+        updateMotor2Position();
+        updateMotor3Position();
+        updateMotor4Position();
+        updateMotor5Position();
+        DEVICE_DELAY_US(2500);  // Faster loop execution for smoother response
+    }
+}
+
+// **Function to initialize GPIO configuration**
+void initGPIO(void)
+{
+    EALLOW;
+
+    GPIO_setDirectionMode(GPIO_UP_INPUT_M2, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(GPIO_UP_INPUT_M2, GPIO_PIN_TYPE_PULLUP);
+    GPIO_setDirectionMode(GPIO_DOWN_INPUT_M2, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(GPIO_DOWN_INPUT_M2, GPIO_PIN_TYPE_PULLUP);
+    GPIO_setDirectionMode(GPIO0_SERVO, GPIO_DIR_MODE_OUT);
+
+    GPIO_setDirectionMode(GPIO_UP_INPUT_M3, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(GPIO_UP_INPUT_M3, GPIO_PIN_TYPE_PULLUP);
+    GPIO_setDirectionMode(GPIO_DOWN_INPUT_M3, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(GPIO_DOWN_INPUT_M3, GPIO_PIN_TYPE_PULLUP);
+    GPIO_setDirectionMode(GPIO1_SERVO, GPIO_DIR_MODE_OUT);
+
+    GPIO_setDirectionMode(GPIO_LEFT_INPUT_M4, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(GPIO_LEFT_INPUT_M4, GPIO_PIN_TYPE_PULLUP);
+    GPIO_setDirectionMode(GPIO_RIGHT_INPUT_M4, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(GPIO_RIGHT_INPUT_M4, GPIO_PIN_TYPE_PULLUP);
+    GPIO_setDirectionMode(GPIO6_SERVO, GPIO_DIR_MODE_OUT);
+
+    GPIO_setDirectionMode(GPIO_OPEN_INPUT_M5, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(GPIO_OPEN_INPUT_M5, GPIO_PIN_TYPE_PULLUP);
+    GPIO_setDirectionMode(GPIO_CLOSE_INPUT_M5, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(GPIO_CLOSE_INPUT_M5, GPIO_PIN_TYPE_PULLUP);
+    GPIO_setDirectionMode(GPIO7_SERVO, GPIO_DIR_MODE_OUT);
+
+    EDIS;
+}
+
+
+
+// **Function to generate servo movement**
+void moveServo(uint16_t pulseWidth, uint32_t gpio)
+{
+    GPIO_writePin(gpio, 1);
+    delay_us(pulseWidth);
+    GPIO_writePin(gpio, 0);
+    delay_us(20000 - pulseWidth);  // Adjusted to maintain 50Hz frequency
+}
+
+// **Microsecond delay function**
+void delay_us(uint32_t us)
+{
+    while (us--)
+    {
+        DEVICE_DELAY_US(1);
+    }
+}
+
+// **Function to update Motor 2 position**
+void updateMotor2Position(void)
+{
+    if (!GPIO_readPin(GPIO_UP_INPUT_M2))
+    {
+        if (currentServoPos_M2 > MOTOR2_UP_PULSE)
+        {
+            currentServoPos_M2 -= MOTOR2_STEP;
+        }
+    }
+    else if (!GPIO_readPin(GPIO_DOWN_INPUT_M2))
+    {
+        if (currentServoPos_M2 < MOTOR2_DOWN_PULSE)
+        {
+            currentServoPos_M2 += MOTOR2_STEP;
+        }
+    }
+
+    moveServo(currentServoPos_M2, GPIO0_SERVO);
+}
+
+// **Function to update Motor 3 position**
+void updateMotor3Position(void)
+{
+    if (!GPIO_readPin(GPIO_UP_INPUT_M3))
+    {
+        if (currentServoPos_M3 > MOTOR3_NEUTRAL)
+        {
+            currentServoPos_M3 -= MOTOR3_STEP;
+        }
+    }
+    else if (!GPIO_readPin(GPIO_DOWN_INPUT_M3))
+    {
+        if (currentServoPos_M3 < MOTOR3_MAX_PULSE)
+        {
+            currentServoPos_M3 += MOTOR3_STEP;
+        }
+    }
+
+    moveServo(currentServoPos_M3, GPIO1_SERVO);
+}
+
+// **Function to update Motor 4 position**
+void updateMotor4Position(void)
+{
+    if (!GPIO_readPin(GPIO_LEFT_INPUT_M4))
+    {
+        if (currentServoPos_M4 < MOTOR4_LEFT_PULSE)
+        {
+            currentServoPos_M4 += MOTOR4_STEP;
+        }
+    }
+    else if (!GPIO_readPin(GPIO_RIGHT_INPUT_M4))
+    {
+        if (currentServoPos_M4 > MOTOR4_RIGHT_PULSE)
+        {
+            currentServoPos_M4 -= MOTOR4_STEP;
+        }
+    }
+
+    moveServo(currentServoPos_M4, GPIO6_SERVO);
+}
+
+// **Function to update Motor 5 position**
+void updateMotor5Position(void)
+{
+    if (!GPIO_readPin(GPIO_OPEN_INPUT_M5))
+    {
+        if (currentServoPos_M5 < MOTOR5_OPEN_PULSE)
+        {
+            currentServoPos_M5 += MOTOR5_STEP;
+        }
+    }
+    else if (!GPIO_readPin(GPIO_CLOSE_INPUT_M5))
+    {
+        if (currentServoPos_M5 > MOTOR5_CLOSE_PULSE)
+        {
+            currentServoPos_M5 -= MOTOR5_STEP;
+        }
+    }
+
+    moveServo(currentServoPos_M5, GPIO7_SERVO);
+}
